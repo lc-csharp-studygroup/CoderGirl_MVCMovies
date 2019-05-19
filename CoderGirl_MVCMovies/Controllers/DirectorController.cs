@@ -15,7 +15,7 @@ namespace CoderGirl_MVCMovies.Controllers
 
         public IActionResult Create()
         {
-
+			return View();
         }
     }
 }
