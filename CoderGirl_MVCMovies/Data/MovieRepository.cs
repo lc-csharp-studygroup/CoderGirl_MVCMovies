@@ -49,6 +49,14 @@ namespace CoderGirl_MVCMovies.Data
                                                 .Select(rating => rating.Rating)
                                                 .ToList();
             movie.Ratings = ratings;
+
+            if (movie.Ratings.Count != 0 )
+            {
+                movie.AverageRating = ratings.Average();
+                movie.NumberOfRatings = movie.Ratings.Count;
+            }
+
+            
             return movie;
         }
     }
