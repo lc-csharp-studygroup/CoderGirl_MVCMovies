@@ -18,9 +18,17 @@ namespace CoderGirl_MVCMovies.Controllers
             return View(directors);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
 			return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Director director)
+        {
+            directorRepository.Save(director);
+            return RedirectToAction(actionName: nameof(Index));
         }
     }
 }
